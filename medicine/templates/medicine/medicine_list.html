@@ -1,0 +1,22 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+  <div class="container">
+    <form action="{% url 'search_results' %}" method="get">
+      <input name="search" type="text" placeholder="Search...">
+    </form>
+    <a href="{% url 'medicine_create' %}">Create new medicine</a>
+    <h1>Medicine List</h1>
+    {% if medicine_list %}
+      <ul>
+      {% for medicine in medicine_list %}
+        <li>
+          <a href="{{ medicine.get_absolute_url }}">{{ medicine.product_name }}</a> <p>Rs {{medicine.price}}/-</p>
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no medicines.</p>
+    {% endif %}       
+  </div>
+{% endblock %}

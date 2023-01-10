@@ -1,0 +1,14 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+  <h1>Name: {{ medicine.product_name }}</h1>
+
+  <p><strong>Manufacturer:</strong> {{ medicine.name_of_manufacturer }}</p>
+  <p><strong>Price:</strong> {{ medicine.price }}</p>
+  <p><strong>Date of manufacture:</strong> {{ medicine.date_of_manufacture }}</p> 
+  <p><strong>Description:</strong> {{ medicine.description }}</p>  
+
+  <a href="{% url 'medicine_update' medicine.id %}">Edit</a>
+  &nbsp;
+  <a href="{% url 'medicine_delete' medicine.id %}">Delete</a>
+{% endblock %}

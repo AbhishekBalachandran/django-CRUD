@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for medicine in object_list %}
+    <li>
+      {{ medicine.product_name }}  Rs {{ medicine.price }}/-
+    </li>
+  {% endfor %}
+</ul>
